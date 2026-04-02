@@ -1,8 +1,8 @@
 export default function AIStudioHero() {
     return (
-        <section className="relative min-h-screen bg-[#fdf6ee] overflow-hidden font-sans">
+        <section className="relative min-h-screen bg-[#0f172a14] overflow-hidden font-sans">
             {/* Subtle background circle accent */}
-            <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full bg-[#7a5af824] opacity-60 blur-3xl pointer-events-none" />
+            <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full bg-[#0f172a14] opacity-60 blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
 
@@ -74,6 +74,14 @@ export default function AIStudioHero() {
                             </div>
                         ))}
                     </div>
+                    <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <button className="w-full sm:w-auto bg-gray-950 text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors">
+              Book a Demo
+            </button>
+            <button className="w-full sm:w-auto bg-white/50 border border-gray-200 text-gray-700 px-8 py-3 rounded-full text-sm font-bold hover:bg-white transition-colors">
+              View Pricing
+            </button>
+          </div>
                 </div>
 
                 {/* ── RIGHT COLUMN — Dashboard image ── */}
@@ -81,93 +89,65 @@ export default function AIStudioHero() {
                     <div className="relative w-full max-w-[640px]">
 
                         {/* Outer card wrapper */}
-                        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+                        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-white">
 
-                            {/* Header bar */}
-                            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-                                <div>
-                                    <p className="text-[10px] font-semibold tracking-widest uppercase text-gray-400">
-                                        Launch Surface
-                                    </p>
-                                    <p className="text-sm font-semibold text-gray-800">
-                                        Autonomous AI Agent
-                                    </p>
-                                </div>
-                                <span className="flex items-center gap-1.5 bg-amber-50 text-amber-600 text-xs font-semibold px-3 py-1.5 rounded-full border border-amber-200">
-                                    <svg
-                                        className="w-3.5 h-3.5"
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M7 1l1.545 3.13L12 4.635l-2.5 2.436.59 3.44L7 8.885l-3.09 1.626.59-3.44L2 4.635l3.455-.505L7 1z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    Agentic layer
-                                </span>
-                            </div>
-
-                            {/* Dashboard image placeholder */}
-                            <div className="relative w-full aspect-[16/10] bg-gray-100 flex items-center justify-center">
-                                <div className="relative w-full aspect-[16/10] bg-gray-50 flex items-center justify-center">
-                                    <img
-                                        src="/dashboard-demo-2.webp"
-                                        alt="Montr dashboard"
-                                        className="object-cover"
-                                    />
-
-                                    <div className="flex flex-col items-center gap-2 text-gray-300 select-none">
-                                        <svg
-                                            className="w-12 h-12"
-                                            viewBox="0 0 48 48"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <rect
-                                                x="4"
-                                                y="4"
-                                                width="40"
-                                                height="40"
-                                                rx="6"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                strokeDasharray="6 3"
-                                            />
-                                            <circle cx="18" cy="20" r="5" stroke="currentColor" strokeWidth="2" />
-                                            <path
-                                                d="M4 36l10-8 8 6 8-10 14 12"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Floating stat — 24/7 */}
-                        <div className="absolute -bottom-4 left-4 bg-white rounded-2xl shadow-xl border border-gray-100 px-6 py-4">
-                            <p className="text-2xl font-extrabold text-gray-900 leading-none">24/7</p>
-                            <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mt-1">
-                                Task Execution<br />Coverage
-                            </p>
-                        </div>
-
-                        {/* Floating stat — Cross-feature */}
-                        <div className="absolute -bottom-4 right-4 bg-gray-950 text-white rounded-2xl shadow-xl px-6 py-4">
-                            <p className="text-base font-extrabold leading-none">Cross-feature</p>
-                            <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mt-1">
-                                Coordination From<br />One Agent Layer
-                            </p>
-                        </div>
-
-                    </div>
+              {/* Header bar */}
+              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-50">
+                <div>
+                  <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400">
+                    Launch Surface
+                  </p>
+                  <p className="text-sm font-bold text-gray-800">
+                    Audio Bot
+                  </p>
                 </div>
+                <span className="flex items-center gap-1.5 bg-sky-50 text-sky-600 text-[10px] font-bold tracking-wider uppercase px-4 py-2 rounded-full border border-sky-100">
+                  <svg
+                    className="w-3.5 h-3.5"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 4H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM4 4V3a3 3 0 1 1 6 0v1"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                    />
+                  </svg>
+                  Agentic layer
+                </span>
+              </div>
+
+              {/* Dashboard image placeholder */}
+              <div className="relative w-full aspect-[16/10] bg-gray-50 flex items-center justify-center p-4">
+                <img
+                  src="/dashboard-demo-2.webp"
+                  alt="Montr Audio Bot Dashboard"
+                  className="w-full h-full object-cover rounded-xl shadow-inner border border-gray-100"
+                />
+              </div>
+
+              {/* Bottom Stat Bar */}
+              <div className="grid grid-cols-2 border-t border-gray-50">
+                <div className="px-8 py-6 border-r border-gray-50">
+                   <p className="text-xl font-extrabold text-gray-900">5 formats</p>
+                   <p className="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-400 mt-1">
+                     from One Workspace
+                   </p>
+                </div>
+                <div className="px-8 py-6">
+                   <p className="text-xl font-extrabold text-gray-900">1 library</p>
+                   <p className="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-400 mt-1">
+                     For Prompts and<br />Assets
+                   </p>
+                </div>
+              </div>
+
             </div>
+
+              </div>
+            </div>
+          </div>
         </section>
     );
 }

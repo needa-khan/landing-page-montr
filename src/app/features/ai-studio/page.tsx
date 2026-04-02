@@ -6,7 +6,7 @@ import AIStudioCapabilities from "@/components/ai-studio/aistudioCapabilities";
 import AIStudioUseCases from "@/components/ai-studio/aistudioUseCases";
 import PlatformMap from "@/components/platformMap";
 
-export default function AIStudioPage() {
+export default function AI_Studio() {
     return (
         <main>
             <Navbar />
