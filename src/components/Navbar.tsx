@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,26 +35,64 @@ export default function Navbar() {
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         </a>
-        <a href="#" className="hover:bg-white/10 px-3 py-1 rounded-full transition-colors">Home</a>
-        <a href="#" className="flex items-center gap-1 hover:bg-white/10 px-3 py-1 rounded-full transition-colors">
-          Features
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
-        <a href="#" className="flex items-center gap-1 hover:bg-white/10 px-3 py-1 rounded-full transition-colors">
-          Solutions
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
-        <a href="#" className="hover:bg-white/10 px-3 py-1 rounded-full transition-colors">Pricing</a>
-        <a href="#" className="flex items-center gap-1 hover:bg-white/10 px-3 py-1 rounded-full transition-colors">
-          More
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
+        <Link href="/">Home</Link>
+        <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("features")}
+            onMouseLeave={() => setOpenMenu(null)}
+          >
+            <Link href="/features" className="flex items-center gap-1 hover:bg-white/10 px-3 py-1 rounded-full transition">
+              Features
+            </Link>
+
+            {openMenu === "features" && (
+              <div className="absolute top-12 left-0 w-64 bg-white text-gray-900 rounded-2xl shadow-lg p-4 space-y-2">
+                <Link href="/features/autonomous-ai-agent" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Autonomous AI Agent</Link>
+                <Link href="/features/ai-studio" className="block px-3 py-2 rounded-lg hover:bg-gray-100">AI Studio</Link>
+                <Link href="/features/audio-bot" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Audio Bot</Link>
+                <Link href="/features/automation-workflow" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Automation Workflow</Link>
+              </div>
+            )}
+        </div>
+        <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("solutions")}
+            onMouseLeave={() => setOpenMenu(null)}
+          >
+            <Link href="/solutions" className="flex items-center gap-1 hover:bg-white/10 px-3 py-1 rounded-full transition">
+              Solutions
+            </Link>
+
+            {openMenu === "solutions" && (
+              <div className="absolute top-12 left-0 w-64 bg-white text-gray-900 rounded-2xl shadow-lg p-4 space-y-2">
+                <Link href="/solutions/agencies" className="block px-3 py-2 rounded-lg hover:bg-gray-100">For Agencies</Link>
+                <Link href="/solutions/startups" className="block px-3 py-2 rounded-lg hover:bg-gray-100">For Startups</Link>
+                <Link href="/solutions/smb" className="block px-3 py-2 rounded-lg hover:bg-gray-100">For SMBs</Link>
+                <Link href="/solutions/ecommerce" className="block px-3 py-2 rounded-lg hover:bg-gray-100">For E-Commerce</Link>
+                <Link href="/solutions/enterprise" className="block px-3 py-2 rounded-lg hover:bg-gray-100">For Enterprise</Link>
+              </div>
+            )}
+        </div>
+        <Link href="/pricing">Pricing</Link>
+        <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("more")}
+            onMouseLeave={() => setOpenMenu(null)}
+          >
+            <button className="flex items-center gap-1 hover:bg-white/10 px-3 py-1 rounded-full transition">
+              More
+            </button>
+
+            {openMenu === "more" && (
+              <div className="absolute top-12 left-0 w-64 bg-white text-gray-900 rounded-2xl shadow-lg p-4 space-y-2">
+                <Link href="/more/contacts" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Contacts</Link>
+                <Link href="/more/team" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Team</Link>
+                <Link href="/more/blog" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Blog</Link>
+                <Link href="/more/faqs" className="block px-3 py-2 rounded-lg hover:bg-gray-100">FAQs</Link>
+                <Link href="/more/careers" className="block px-3 py-2 rounded-lg hover:bg-gray-100">Careers</Link>
+              </div>
+            )}
+        </div>
       </div>
 
       {/* Auth Buttons */}

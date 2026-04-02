@@ -1,6 +1,6 @@
 "use client";
 
-export default function Impact() {
+export default function Impacts() {
   const stats = [
     {
       number: "10x",

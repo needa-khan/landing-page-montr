@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function Features() {
+export default function Overview() {
   return (
     <section className="px-16 py-24 bg-white">
 
